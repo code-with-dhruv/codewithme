@@ -1,0 +1,11 @@
+python-telegram-bot
+requests
+datetime
+pymongo
+bs4
+throwbin
+telepot
+pillow
+bs4
+beautifulsoup4
+html5lib
