@@ -16,7 +16,7 @@ import json
 import math
 import html5lib
 dia='✅'
-
+#boi identify only very small mistake
 os.environ['TZ'] = 'America/Buenos_Aires'
 
 gods=["21951A6626","21951A6637","21951A6627","21951A6614"]
@@ -169,13 +169,19 @@ def attendance(update, context):
                   url = "https://samvidha.iare.ac.in/home?action=stud_att_STD"
                   r= s.get(url)
                   aa=str(r.content[24973:28000])
+                  q=str(r.content)
+                  p0=(q[q.find("English")+125:q.find("English")+135]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
+                  p1=(q[q.find("English")+180:q.find("English")+190]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   a=("English")
                   t=aa.index(a)
                   text="<b>English:</b> <code>{}%</code>".format(aa[t+238+1-2:t+238+1+7+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
                   Sendmessage(chat_id,text)
+                  text = "You attended {} out of {} for getting atleast 75% you need to attend more -- classes!!".format(p1,p0)
+                  Sendmessage(chat_id,text)
                   a="Probability and Statistics"
                   t=aa.index(a)
                   text="<b>P&S:</b> <code>{}%</code>".format(aa[t+205+43+9+1-2:t+205+43+9+7+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
+                  Sendmessage(chat_id,text)
                   a=("Applied Physics")
                   t=aa.index(a)
                   text="<b>AP:</b> <code>{}%</code>".format(aa[t+194+52-2+1:t+52+194+7+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
@@ -228,7 +234,6 @@ def main():
     dp.add_handler(CommandHandler("cmds", cmds))
     #dp.add_handler(CommandHandler("login", login))
     dp.add_handler(CommandHandler("attendance", attendance))
-
     logger.info("Bot Started!!!")
     updater.start_polling()
     updater.idle()
