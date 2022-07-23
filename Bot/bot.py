@@ -176,7 +176,7 @@ def attendance(update, context):
                   t=aa.index(a)
                   text="<b>English:</b> <code>{}%</code>".format(aa[t+238+1-2:t+238+1+7+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
                   Sendmessage(chat_id,text)
-                  text = "You attended {} out of {} for getting atleast 75% you need to attend more -- classes!!".format(p1,p0)
+                  text = "<code>You attended <b>{}</b> out of <b>{}</b> for getting atleast 75% you need to attend more -- classes!!</code>".format(p1,p0)
                   Sendmessage(chat_id,text)
                   a="Probability and Statistics"
                   t=aa.index(a)
@@ -197,18 +197,34 @@ def attendance(update, context):
                   a="Programming for Problem Solving using C"
                   t=aa.index(a)
                   text="<b>PPSC:</b> <code>{}%</code>".format(aa[t+218+52-2+1:t+218+52+7+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
+                  p0=(q[q.find(a)+1+157:q.find(a)+158+7]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
+                  p1=(q[q.find(a)+155+59:q.find(a)+155+59+7]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
+                  Sendmessage(chat_id,text)
+                  text = "You attended {} out of {} for getting atleast 75% you need to attend more -- classes!!".format(p1,p0)
                   Sendmessage(chat_id,text)
                   a="English Language and Communication Skills Laboratory"
                   t=aa.index(a)
                   text="<b>Eng lab:</b> <code>{}%</code>".format(aa[t+231+52+1-2:t+231+52+7+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
+                  p0=(q[q.find(a)+172:q.find(a)+170+7]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
+                  p1=(q[q.find(a)+172+55:q.find(a)+172+55+5]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
+                  Sendmessage(chat_id,text)
+                  text = "You attended {} out of {} for getting atleast 75% you need to attend more -- classes!!".format(p1,p0)
                   Sendmessage(chat_id,text)
                   a=("Physics Laboratory")
                   t=aa.index(a)
                   text="<b>AP lab:</b> <code>{}%</code>".format(aa[t+197+52+1-2:t+197+7+52+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
+                  p0=(q[q.find(a)+110+27:q.find(a)+110+27+7])
+                  p1=(q[q.find(a)+172+20:q.find(a)+172+20+7])
+                  Sendmessage(chat_id,text)
+                  text = "You attended {} out of {} for getting atleast 75% you need to attend more -- classes!!".format(p1,p0)
                   Sendmessage(chat_id,text)
                   a="Programming for Problem Solving using C Laboratory"
                   t=aa.index(a)
                   text="<b>C lab:</b> <code>{}%</code>".format(aa[t+229+52+1-2:t+229+7+52+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
+                  p0=(q[q.find(a)+110+30+30:q.find(a)+110+50+6+10])
+                  p1=(q[q.find(a)+150+20+40+15:q.find(a)+170+55+7])
+                  Sendmessage(chat_id,text)
+                  text = "You attended {} out of {} for getting atleast 75% you need to attend more -- classes!!".format(p1,p0)
                   Sendmessage(chat_id,text)
             except:
                 text = "Incorrect password"
