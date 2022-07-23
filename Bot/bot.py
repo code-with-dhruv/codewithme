@@ -142,6 +142,19 @@ def apfile(update, context):
         text = "Gods do not permit your entry!" 
         Sendmessage(chat_id,text)
 ######################################################################################################################
+def helper(a,b):
+    sum1=0
+    for i in range(b,a):
+        ctr=0
+        k=(b/a*100)
+        b+=1
+        a+=1
+        ctr+=1
+        sum1+=ctr
+        if k>=75:
+            break
+    answer=(sum1-1)
+######################################################################################################################
 def attendance(update, context):
     chat_id = update.message.chat_id
     info = update.effective_user
@@ -176,7 +189,8 @@ def attendance(update, context):
                   p0=(q[q.find(a)+125:q.find(a)+135]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   p1=(q[q.find(a)+180:q.find(a)+190]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   Sendmessage(chat_id,text)
-                  text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>--</b> <code>classes!!</code>".format(p1,p0)
+                  helper(int(p0),int(p1))
+                  text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(p1,p0,answer)
                   Sendmessage(chat_id,text)
                   a="Probability and Statistics"
                   t=aa.index(a)
