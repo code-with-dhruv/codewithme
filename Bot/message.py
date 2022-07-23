@@ -1,7 +1,7 @@
 import logging
 from telegram import Bot
 import os
-players="-666975064"
+players="-1001782490306"
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     level=logging.INFO
