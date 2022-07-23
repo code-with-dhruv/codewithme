@@ -168,7 +168,7 @@ def attendance(update, context):
     logger.info(text)
     print(info)
     Deletemessage(chat_id, update.message.message_id)
-    text = "<code> {} </code> -- <b>Attendance</b>".format(username)
+    text = "<b>Attendance</b> -- <code> {} </code>".format(username)
     Sendmessage(chat_id,text)
     if True:
         if False:
@@ -193,7 +193,6 @@ def attendance(update, context):
                   p1=(q[q.find(a)+180:q.find(a)+190]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   Sendmessage(chat_id,text)
                   att_helper(chat_id,int(p0),int(p1))
-                  
                   a="Probability and Statistics"
                   t=aa.index(a)
                   text="<b>P&S:</b> <code>{}%</code>".format(aa[t+205+43+9+1-2:t+205+43+9+7+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
