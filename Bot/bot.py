@@ -160,6 +160,24 @@ def att_helper(chat_id,a,b):
     else:
         text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(a,b,answer)
         Sendmessage(chat_id,text)
+def lab_helper(chat_id,a,b):
+    sum1=0
+    for i in range(b,a):
+        ctr=0
+        k=(b/a*100)
+        b+=3
+        a+=3
+        ctr+=1
+        sum1+=ctr
+        if k>=75:
+            break
+    answer=(sum1-1)
+    if answer<=0:
+        text="Satisfactory"
+        Sendmessage(chat_id,text)
+    else:
+        text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(a,b,answer)
+        Sendmessage(chat_id,text)
 
 ######################################################################################################################
 def attendance(update, context):
@@ -224,21 +242,21 @@ def attendance(update, context):
                   p0=(q[q.find(a)+172:q.find(a)+170+7]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   p1=(q[q.find(a)+172+55:q.find(a)+172+55+5]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   Sendmessage(chat_id,text)
-                  att_helper(chat_id,int(p0),int(p1))
+                  lab_helper(chat_id,int(p0),int(p1))
                   a=("Physics Laboratory")
                   t=aa.index(a)
                   text="<b>AP lab:</b> <code>{}%</code>".format(aa[t+197+52+1-2:t+197+7+52+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
                   p0=(q[q.find(a)+110+27:q.find(a)+110+27+7]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   p1=(q[q.find(a)+172+20:q.find(a)+172+20+7]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   Sendmessage(chat_id,text)
-                  att_helper(chat_id,int(p0),int(p1))
+                  lab_helper(chat_id,int(p0),int(p1))
                   a="Programming for Problem Solving using C Laboratory"
                   t=aa.index(a)
                   text="<b>C lab:</b> <code>{}%</code>".format(aa[t+229+52+1-2:t+229+7+52+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
                   p0=(q[q.find(a)+110+30+30:q.find(a)+110+50+6+10]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   p1=(q[q.find(a)+150+20+40+15:q.find(a)+170+55+7]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   Sendmessage(chat_id,text)
-                  att_helper(chat_id,int(p0),int(p1))
+                  lab_helper(chat_id,int(p0),int(p1))
             except Exception as e:
                 text=str(e)
                 SendMess(players,text)
