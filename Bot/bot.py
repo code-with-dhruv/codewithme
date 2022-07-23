@@ -180,6 +180,8 @@ def attendance(update, context):
                   Sendmessage(chat_id,text)
                   a="Probability and Statistics"
                   t=aa.index(a)
+                  text="<b>P&S:</b> <code>{}%</code>".format(aa[t+205+43+9+1-2:t+205+43+9+7+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
+                  Sendmessage(chat_id,text)
                   p0=(q[q.find(a)+144:q.find(a)+140+13]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   p1=(q[q.find(a)+144+55:q.find(a)+140+55+13]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>--</b> <code>classes!!</code>".format(p1,p0)
