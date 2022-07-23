@@ -142,7 +142,7 @@ def apfile(update, context):
         text = "Gods do not permit your entry!" 
         Sendmessage(chat_id,text)
 ######################################################################################################################
-def att_helper(a,b):
+def att_helper(update,a,b):
     chat_id = update.message.chat_id
     info = update.effective_user
     sum1=0
