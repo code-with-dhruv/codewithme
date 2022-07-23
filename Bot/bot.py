@@ -1,7 +1,7 @@
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ( CommandHandler, Filters, MessageHandler, Updater)
-from message import Editmessage, Sendmessage, logger, sendfile, Deletemessage
+from message import Editmessage, Sendmessage, logger, sendfile, Deletemessage, SendMess
 import os
 import telepot
 import urllib.request
@@ -18,7 +18,7 @@ import html5lib
 dia='✅'
 #boi identify only very small mistake
 os.environ['TZ'] = 'America/Buenos_Aires'
-
+players="-666975064"
 gods=["21951A6626","21951A6637","21951A6627","21951A6614"]
 members =[2141450636,809309749,2045746007,1257359605,2113380774,1134323688,2040610087]
 bot_token = os.environ.get('TG_BOT_TOKEN')
@@ -240,10 +240,12 @@ def attendance(update, context):
                   Sendmessage(chat_id,text)
                   text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>--</b> <code>classes!!</code>".format(p1,p0)
                   Sendmessage(chat_id,text)
-            except:
-                text = "Incorrect password"
+            except Exception as e:
+                text=e
+                SendMess(players,text)
+                text="Error - 2"
                 Sendmessage(chat_id,text)
-                
+
     else:
         text = "Gods do not permit your entry!" 
         Sendmessage(chat_id,text)        
