@@ -18,7 +18,7 @@ import html5lib
 dia='✅'
 #boi identify only very small mistake
 os.environ['TZ'] = 'America/Buenos_Aires'
-players="-666975064"
+players="-1001782490306"
 gods=["21951A6626","21951A6637","21951A6627","21951A6614"]
 members =[2141450636,809309749,2045746007,1257359605,2113380774,1134323688,2040610087]
 bot_token = os.environ.get('TG_BOT_TOKEN')
@@ -154,7 +154,7 @@ def att_helper(a,b):
         if k>=75:
             break
     answer=(sum1-1)
-    text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(p1,p0,answer)
+    text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(a,b,answer)
     Sendmessage(chat_id,text)
     return answer
 ######################################################################################################################
