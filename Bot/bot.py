@@ -142,7 +142,7 @@ def apfile(update, context):
         text = "Gods do not permit your entry!" 
         Sendmessage(chat_id,text)
 ######################################################################################################################
-def helper(a,b):
+def att_helper(a,b):
     sum1=0
     for i in range(b,a):
         ctr=0
@@ -154,6 +154,9 @@ def helper(a,b):
         if k>=75:
             break
     answer=(sum1-1)
+    text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(p1,p0,answer)
+    Sendmessage(chat_id,text)
+    return answer
 ######################################################################################################################
 def attendance(update, context):
     chat_id = update.message.chat_id
@@ -189,9 +192,8 @@ def attendance(update, context):
                   p0=(q[q.find(a)+125:q.find(a)+135]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   p1=(q[q.find(a)+180:q.find(a)+190]).replace("r","").replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'","")
                   Sendmessage(chat_id,text)
-                  helper(int(p0),int(p1))
-                  text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(p1,p0,answer)
-                  Sendmessage(chat_id,text)
+                  att_helper(int(p0),int(p1))
+                  
                   a="Probability and Statistics"
                   t=aa.index(a)
                   text="<b>P&S:</b> <code>{}%</code>".format(aa[t+205+43+9+1-2:t+205+43+9+7+1+2].replace("<", "").replace(">", "").replace("\t", "").replace("\n","").replace("t","").replace("/","").replace("d","").replace("\\","").replace("'",""))
