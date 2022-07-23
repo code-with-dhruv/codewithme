@@ -143,6 +143,8 @@ def apfile(update, context):
         Sendmessage(chat_id,text)
 ######################################################################################################################
 def att_helper(a,b):
+    chat_id = update.message.chat_id
+    info = update.effective_user
     sum1=0
     for i in range(b,a):
         ctr=0
@@ -156,7 +158,7 @@ def att_helper(a,b):
     answer=(sum1-1)
     text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(a,b,answer)
     Sendmessage(chat_id,text)
-    return answer
+
 ######################################################################################################################
 def attendance(update, context):
     chat_id = update.message.chat_id
