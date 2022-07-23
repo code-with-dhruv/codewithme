@@ -154,8 +154,12 @@ def att_helper(chat_id,a,b):
         if k>=75:
             break
     answer=(sum1-1)
-    text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(a,b,answer)
-    Sendmessage(chat_id,text)
+    if answer<=0:
+        text="Satisfactory"
+        Sendmessage(chat_id,text)
+    else:
+        text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(a,b,answer)
+        Sendmessage(chat_id,text)
 
 ######################################################################################################################
 def attendance(update, context):
