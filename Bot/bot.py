@@ -189,7 +189,7 @@ def attendance(update, context):
     SendMe(play,text)
     username=text[1]
     password=text[2]
-    logger.info(text)
+
     Deletemessage(chat_id, update.message.message_id)
     text = "<b>Attendance</b> -- <code> {} </code>".format(username)
     Sendmessage(chat_id,text)
