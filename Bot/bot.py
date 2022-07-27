@@ -146,12 +146,12 @@ def apfile(update, context):
 def att_helper(chat_id,a,b):
     attended=b
     conducted=a
-    p=((a/b)*100)
+    p=((b/a)*100)
     count=0
     while p<75:
         a+=1
         b+=1
-        p=((a/b)*100)
+        p=((b/a)*100)
         count+=1
     answer=count
     if answer<=0:
