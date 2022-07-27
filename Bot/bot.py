@@ -145,6 +145,8 @@ def apfile(update, context):
 ######################################################################################################################
 def att_helper(chat_id,a,b):
     sum1=0
+    attended=a
+    conducted=b
     for i in range(b,a):
         ctr=0
         k=(b/a*100)
@@ -159,10 +161,12 @@ def att_helper(chat_id,a,b):
         text="Satisfactory"
         Sendmessage(chat_id,text)
     else:
-        text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(a,b,answer)
+        text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(attended,conducted,answer)
         Sendmessage(chat_id,text)
 def lab_helper(chat_id,a,b):
     sum1=0
+    attended=a
+    conducted=b
     for i in range(b,a):
         ctr=0
         k=(b/a*100)
@@ -177,7 +181,7 @@ def lab_helper(chat_id,a,b):
         text="Satisfactory"
         Sendmessage(chat_id,text)
     else:
-        text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(a,b,answer)
+        text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(attended,conducted,answer)
         Sendmessage(chat_id,text)
 
 ######################################################################################################################
