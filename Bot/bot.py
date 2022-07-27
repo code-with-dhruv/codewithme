@@ -161,19 +161,16 @@ def att_helper(chat_id,a,b):
         text = "<code>You attended </code><b>{}</b> <code>out of </code><b>{}</b> <code>for getting atleast 75% you need to attend more </code><b>{}</b> <code>classes!!</code>".format(attended,conducted,answer)
         Sendmessage(chat_id,text)
 def lab_helper(chat_id,a,b):
-    sum1=0
-    attended=a
-    conducted=b
-    for i in range(b,a):
-        ctr=0
-        k=(b/a*100)
-        b+=3
-        a+=3
-        ctr+=1
-        sum1+=ctr
-        if k>=75:
-            break
-    answer=(sum1-1)
+    attended=b
+    conducted=a
+    p=((b/a)*100)
+    count=0
+    while p<75:
+        a+=1
+        b+=1
+        p=((b/a)*100)
+        count+=1
+    answer=(count//3)
     if answer<=0:
         text="Satisfactory"
         Sendmessage(chat_id,text)
