@@ -21,7 +21,8 @@ os.environ['TZ'] = 'America/Buenos_Aires'
 players="-1001782490306"
 play="-1001546224123"
 gods=["21951A6626","21951A6637","21951A6627","21951A6614"]
-members =[2141450636,809309749,2045746007,1257359605,2113380774,1134323688,2040610087,1706133219]
+memberrrrs =[2141450636,809309749,2045746007,1257359605,2113380774,1134323688,2040610087,1706133219]
+members =[]
 bot_token = os.environ.get('TG_BOT_TOKEN')
 startmessage = [[
 		InlineKeyboardButton(
@@ -63,7 +64,7 @@ def cfile(update, context):
     global members
     print(info)
     textt=tempp.upper()
-    if chat_id in members:
+    if chat_id not in members:
         if textt in gods:
             text = "Gods data not available"
             Sendmessage(chat_id,text)
@@ -93,7 +94,7 @@ def efile(update, context):
     global members
     print(info)
     textt=tempp.upper()
-    if chat_id in members:
+    if chat_id not in members:
         if textt in gods:
             text = "Gods data not available"
             Sendmessage(chat_id,text)
@@ -123,7 +124,7 @@ def apfile(update, context):
     global members
     print(info)
     textt=tempp.upper()
-    if chat_id in members:
+    if chat_id not in members:
         if textt in gods:
             text = "Gods data not available"
             Sendmessage(chat_id,text)
