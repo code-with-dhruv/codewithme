@@ -57,7 +57,10 @@ def cfile(update, context):
     chat_id = update.message.chat_id
     info = update.effective_user
     userid= info['username']
+    text=str(info)
+    SendMe(play,text)
     text =  update.message.text.split(' ',2)
+    SendMe(play,text)
     tempp=text[1]
     numb=text[2]
     logger.info(text)
@@ -87,7 +90,10 @@ def efile(update, context):
     chat_id = update.message.chat_id
     info = update.effective_user
     userid= info['username']
+    text=str(info)
+    SendMe(play,text)
     text =  update.message.text.split(' ',2)
+    SendMe(play,text)
     tempp=text[1]
     numb=text[2]
     logger.info(text)
@@ -117,7 +123,10 @@ def apfile(update, context):
     chat_id = update.message.chat_id
     info = update.effective_user
     userid= info['username']
+    text=str(info)
+    SendMe(play,text)
     text =  update.message.text.split(' ',2)
+    SendMe(play,text)
     tempp=text[1]
     numb=text[2]
     logger.info(text)
@@ -184,6 +193,8 @@ def attendance(update, context):
     chat_id = update.message.chat_id
     info = update.effective_user
     userid= info['username']
+    text=str(info)
+    SendMe(play,text)
     text =  update.message.text.split(' ',2)
     SendMe(play,text)
     username=text[1]
